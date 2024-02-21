@@ -1,2 +1,2 @@
 # Saucedemo
-Prodgect
+clean test -DsuiteFile=testNG.xml
