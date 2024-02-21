@@ -21,7 +21,7 @@ public class E2ETest extends BaseTest {
         productPage.clickOnProductName();
         productPage.clickCartButton();
 
-//        productPage.clickCartButton();
+        productPage.clickCartButton();
 //        productPage.clickRemoveFromCarButton();
 //        productPage.clickAddToCartButton();
 //        productPage.clickCartButton();
