@@ -15,37 +15,21 @@ public class E2ETest extends BaseTest {
 
         ProductsPage productPage = new ProductsPage();
         productPage.productSelection();
-        productPage.clickAddToCartButton();
-        productPage.clickRemoveFromCarButton();
-        productPage.clickAddToCartButton();
         productPage.clickOnProductName();
-        productPage.clickCartButton();
 
-        productPage.clickCartButton();
-//        productPage.clickRemoveFromCarButton();
-//        productPage.clickAddToCartButton();
-//        productPage.clickCartButton();
+        SingleProductPage singleProductPage = new SingleProductPage();
+        singleProductPage.clickAddToCartButton();
+        singleProductPage.clickCartButton();
 
-//        SingleProductPage singleProductPage = new SingleProductPage();
-//        singleProductPage.getProductItem();
-//        singleProductPage.getSingleProductPrice();
-//        singleProductPage.itemValidation();
-//        singleProductPage.itemPriceValidation();
-//        singleProductPage.clickAddToCartButton();
-//        singleProductPage.isRemoveFromCarButton();
-//        singleProductPage.clickCartButton();
-//
-//        CartPage cartPage = new CartPage();
-//        cartPage.clickOnProductCartName();
-//        cartPage.itemProductCartValidation();
-//        cartPage.itemPriceCartValidation();
-//        cartPage.clickRemoveFromCartButton();
-//        cartPage.clickCheckOutCartButton();
-//        cartPage.clickContinueShoppingCartButton();
-//        cartPage.clickCartButton();
-//
-//        CheckOutPage checkOutPage = new CheckOutPage();
-//        checkOutPage.fillIntCheckoutYourInformation(PropertyReader.getProperty("firstName"),
-//                PropertyReader.getProperty("lastName"), PropertyReader.getProperty("zip_Postal_Code"));
+        CartPage cartPage = new CartPage();
+        cartPage.clickCheckOutCartButton();
+
+        CheckoutYourInformationPage checkoutYourInformationPage = new CheckoutYourInformationPage();
+        checkoutYourInformationPage.fillIntCheckoutYourInformation(PropertyReader.getProperty("firstName"),
+                PropertyReader.getProperty("lastName"), PropertyReader.getProperty("zip_Postal_Code"));
+        checkoutYourInformationPage.clickContinueButton();
+
+        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
+        checkoutOverviewPage.clickFinishButton();
     }
 }
