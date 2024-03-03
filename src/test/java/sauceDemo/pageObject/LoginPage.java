@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
         PASSWORD.sendKeys(password);
     }
 
-    private void clickLoginButton() {//нажатие кнопки
+    public void clickLoginButton() {//нажатие кнопки
         LOGIN_BUTTON.click();
     }
 
@@ -32,6 +32,5 @@ public class LoginPage extends BasePage {
     public void fillInLoginForm(String userName, String password) {
         setUserName(userName);
         setPassword(password);
-        clickLoginButton();
     }
 }

@@ -12,6 +12,7 @@ public class E2ETest extends BaseTest {
     public void e2eTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.fillInLoginForm(PropertyReader.getProperty("userName"), PropertyReader.getProperty("password"));
+        loginPage.clickLoginButton();
 
         ProductsPage productPage = new ProductsPage();
         productPage.productSelection();
@@ -43,5 +44,7 @@ public class E2ETest extends BaseTest {
 
         BackHome backHome = new BackHome();
         backHome.clickBackHome();
+
+        productPage.productSelection();
     }
 }
