@@ -11,17 +11,23 @@ public class E2ETest extends BaseTest {
     @Description("test desc")
     public void e2eTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.fillIntLoginForm(PropertyReader.getProperty("userName"), PropertyReader.getProperty("password"));
+        loginPage.fillInLoginForm(PropertyReader.getProperty("userName"), PropertyReader.getProperty("password"));
 
         ProductsPage productPage = new ProductsPage();
         productPage.productSelection();
         productPage.clickOnProductName();
 
         SingleProductPage singleProductPage = new SingleProductPage();
+//        singleProductPage.getProductItem();
+//        singleProductPage.getSingleProductPrice();
+//        singleProductPage.itemValidation();
+//        singleProductPage.itemPriceValidation();
         singleProductPage.clickAddToCartButton();
         singleProductPage.clickCartButton();
 
         CartPage cartPage = new CartPage();
+//        cartPage.itemProductCartValidation();
+//        cartPage.itemPriceCartValidation();
         cartPage.clickCheckOutCartButton();
 
         CheckoutYourInformationPage checkoutYourInformationPage = new CheckoutYourInformationPage();
@@ -30,6 +36,12 @@ public class E2ETest extends BaseTest {
         checkoutYourInformationPage.clickContinueButton();
 
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
+//        checkoutOverviewPage.getProductItem();
+//        checkoutOverviewPage.getSingleProductPrice();
+//        checkoutOverviewPage.itemPriceValidation();
         checkoutOverviewPage.clickFinishButton();
+
+        BackHome backHome = new BackHome();
+        backHome.clickBackHome();
     }
 }

@@ -24,7 +24,7 @@ public class CheckoutYourInformationPage extends BasePage {
         LAST_NAME.sendKeys(lastName);
     }
 
-    private void setZip_Postal_Code(String zip_Postal_Code) {
+    public void setZip_Postal_Code(String zip_Postal_Code) {
         ZIP_POSTAL_CODE.sendKeys(zip_Postal_Code);
     }
 

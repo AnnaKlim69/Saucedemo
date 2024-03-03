@@ -10,6 +10,6 @@ public class LoginTest extends BaseTest {
     @Test
     public void loginWithCorrectUser() {
         LoginPage loginPage = new LoginPage();
-        loginPage.fillIntLoginForm(PropertyReader.getProperty("userName"), PropertyReader.getProperty("password"));
+        loginPage.fillInLoginForm(PropertyReader.getProperty("userName"), PropertyReader.getProperty("password"));
     }
 }

@@ -10,17 +10,15 @@ import static framework.Browser.getDriver;
 
 public class SingleProductPage extends BasePage {
     private static final String PAGE_LOCATOR =
-            "//div[@class='inventory_details_name large_size' and text()='Sauce Labs Backpack']";
+            "//div[@class='inventory_details_name large_size' and text()='%s']";
     private static final String PRODUCT_PRICE = "//a/div[text()='%s']/../../..//div[@class='inventory_item_price']";
     private static final String PRODUCT_ITEM = "//div[@class='inventory_details_name large_size']";
-    private static final Button ADD_TO_CART_BUTTON = new Button(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']"));
-    private static final Button REMOVE_CART_BUTTON = new Button(By.xpath("//button[@id='remove-sauce-labs-backpack']"));
+    private static final Button ADD_TO_CART_BUTTON = new Button(By.xpath("//button[@class='btn btn_primary btn_small btn_inventory' and text()='Add to cart']"));
     protected static final Button CART_BUTTON = new Button(By.xpath("//a[@class='shopping_cart_link']"));
     public String productItem;
     public static double price;
 
-    public SingleProductPage() {
-        super(By.xpath(PAGE_LOCATOR), "Single Product Page");
+    public SingleProductPage() {super(By.xpath(PAGE_LOCATOR), "Single Product Page");
     }
 
     public String getProductItem() {
@@ -49,10 +47,10 @@ public class SingleProductPage extends BasePage {
     }
 
     public void clickAddToCartButton() {
-        ADD_TO_CART_BUTTON.clickAndWait();
+        ADD_TO_CART_BUTTON.click();
     }
 
     public void clickCartButton() {
-        CART_BUTTON.clickAndWait();
+        CART_BUTTON.click();
     }
 }

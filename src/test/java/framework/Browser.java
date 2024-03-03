@@ -14,7 +14,7 @@ public class Browser {
     public static Browser getInstance() {
         if (instance == null) {
             driver = DriverFactory.getDriver();
-            driver.manage().timeouts().implicitlyWait(PropertyReader.getIntProperty("timeout"),
+            driver.manage().timeouts().implicitlyWait(PropertyReader.getInProperty("timeout"),
                     TimeUnit.SECONDS);
         } else {
             System.out.println("Driver does not instance!");
@@ -22,7 +22,7 @@ public class Browser {
         return instance = new Browser();
     }
 
-    public static void windowMaxsimize() {//открыть окно максимально
+    public static void windowMaximize() {//открыть окно максимально
         driver.manage().window().maximize();
     }
 
@@ -33,13 +33,13 @@ public class Browser {
     public static void quit() {
         driver.quit();
         instance = null;
-        System.out.println("Browser has been closed.");
+        System.out.println("Driver has been closed.");
     }
 
     public static void waitForPageLoad() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(PropertyReader
-                .getIntProperty("page.load.timeout")));
+                .getInProperty("page.load.timeout")));
         wait.until(driver -> executor.executeScript("return document.readyState").equals("complete"));
     }
 

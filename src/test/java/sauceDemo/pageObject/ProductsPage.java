@@ -44,14 +44,19 @@ public class ProductsPage extends BasePage {
                 .getText().replace("$", ""));
     }
 
-    public void clickOnProductName() {
-        productSelection();
-        productItem.click();
-    }
-
     public void clickAddToCartButton() {
         productSelection();
         ADD_TO_CART_BUTTON.click();
+    }
+
+    public void setScrollProductName() {
+        productSelection();
+        setScrollProductName();
+    }
+
+    public void clickOnProductName() {
+        productSelection();
+        productItem.click();
     }
 
     public void clickRemoveFromCarButton() {
@@ -60,6 +65,6 @@ public class ProductsPage extends BasePage {
     }
 
     public void clickCartButton() {
-        CART_BUTTON.clickAndWait();
+        CART_BUTTON.click();
     }
 }

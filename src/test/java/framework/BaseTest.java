@@ -13,8 +13,8 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         getInstance();
-        windowMaxsimize();
-        navigateTo(PropertyReader.getProperty("bas.URL"));
+        windowMaximize();
+        navigateTo(PropertyReader.getProperty("base.URL"));
     }
 
     @AfterMethod(alwaysRun = true, description = "Closing browser")

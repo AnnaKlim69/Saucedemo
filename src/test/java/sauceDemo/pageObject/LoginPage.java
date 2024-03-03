@@ -28,8 +28,8 @@ public class LoginPage extends BasePage {
         LOGIN_BUTTON.click();
     }
 
-    @Step("Fill in login From with '{userName}, '{password}'")
-    public void fillIntLoginForm(String userName, String password) {
+    @Step("Fill in login From with '{userName}', '{password}'")
+    public void fillInLoginForm(String userName, String password) {
         setUserName(userName);
         setPassword(password);
         clickLoginButton();
