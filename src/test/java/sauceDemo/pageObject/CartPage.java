@@ -27,20 +27,6 @@ public class CartPage extends BasePage {
         super(By.xpath(PAGE_LOCATOR), "Cart Page");
     }
 
-
-//    public double getProductCartPrice() {
-//        return cartPrice = Double.parseDouble(getDriver().findElement(By.xpath(String.format(CART_PRICE, cartProductName)))
-//                .getText().replace("$", ""));
-//    }
-
-//    public void itemPriceCartValidation() {
-//        if (!Objects.equals(getProductCartPrice(), ProductsPage.price)) {
-//            System.out.println("Items are not equal");
-//        } else {
-//            System.out.println("Items are equal");
-//        }
-//    }
-
     public void clickCheckOutCartButton() {
         CHECKOUT_BUTTON.click();
     }

@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
         super(By.xpath(PAGE_LOCATOR), "Login Page");
     }
 
-    private void setUserName(String userName) {//ввод имени пользователя
+    private void setUserName(String userName) {
         USER_NAME.sendKeys(userName);
     }
 
