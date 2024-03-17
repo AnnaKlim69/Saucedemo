@@ -43,17 +43,14 @@ public class ProductsPage extends BasePage {
         return price = Double.parseDouble(getDriver().findElement(By.xpath(String.format(PRICE, productName)))
                 .getText().replace("$", ""));
     }
-
     public void clickAddToCartButton() {
         productSelection();
         ADD_TO_CART_BUTTON.click();
     }
-
-    public void setScrollProductName() {
+    public void setScrollProductName(){
         productSelection();
         setScrollProductName();
     }
-
     public void clickOnProductName() {
         productSelection();
         productItem.click();

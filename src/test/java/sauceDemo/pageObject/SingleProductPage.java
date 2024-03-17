@@ -11,11 +11,12 @@ import static framework.Browser.getDriver;
 public class SingleProductPage extends BasePage {
     private static final String PAGE_LOCATOR =
             "//div[@class='inventory_details_name large_size' and text()='%s']";
-    private static final String PRODUCT_PRICE = "//a/div[text()='%s']/../../..//div[@class='inventory_item_price']";
+    private static final String PRODUCT_PRICE = "//div[@class='inventory_details_price']";
     private static final String PRODUCT_ITEM = "//div[@class='inventory_details_name large_size']";
     private static final Button ADD_TO_CART_BUTTON = new Button(By.xpath("//button[@class='btn btn_primary btn_small btn_inventory' and text()='Add to cart']"));
     protected static final Button CART_BUTTON = new Button(By.xpath("//a[@class='shopping_cart_link']"));
-    public String productItem;
+    public static String productItem;
+    public static String productName;
     public static double price;
 
     public SingleProductPage() {super(By.xpath(PAGE_LOCATOR), "Single Product Page");
@@ -26,7 +27,7 @@ public class SingleProductPage extends BasePage {
     }
 
     public double getSingleProductPrice() {
-        return price = Double.parseDouble(getDriver().findElement(By.xpath(String.format(PRODUCT_PRICE, productItem)))
+        return price = Double.parseDouble(getDriver().findElement(By.xpath(String.format(PRODUCT_PRICE, productName)))
                 .getText().replace("$", ""));
     }
 
